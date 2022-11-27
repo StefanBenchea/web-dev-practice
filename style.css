@@ -1,0 +1,118 @@
+.nav-container{
+    position: absolute; left: 0; right: 0;
+}
+
+.nav-links {
+    list-style:none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    padding-top: 10px;
+    max-width: var(--container-max-width);
+    margin: auto;
+}
+.nav-links__item {
+    text-align: center;
+}
+
+.nav-links__link {
+    font-family:var(--font-body);
+    text-decoration: none;
+    color: var(--color-yellow);
+    font-size: 1.25rem;
+    line-height: 1em;
+    padding: 8px 16px;
+    
+}
+
+.nav-links__link:not(.nav-links__link--logo):hover {
+    border-radius: 4px;
+    background-color: var(--color-yellow);
+    color: #4d4d4d;
+}
+
+.nav-links__link--logo {
+    font-family: var(--font-brand);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+@media (min-width:48em) {
+    .nav-links {
+        flex-direction: row;
+        align-items: center;
+        gap: 24px;
+        padding: 24px;
+    }
+
+    .nav-links__item:first-child {
+        margin-right: auto;
+    }
+}
+
+.hero {
+    background-color: black;
+    min-height: 75vh;
+    background-image: url(/images/places/ocean.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.hero__container {
+    background-color:  rgba(255, 255, 255, 0.5);
+    padding: 24px;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+.hero__title {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    line-height: 1.1em;
+}
+
+.hero__content {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.2em;
+    margin-bottom: 8px;
+}
+
+.hero__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.hero__action {
+    text-decoration: none;
+    background-color: var(--color-yellow);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-family:var(--font-body);
+    font-size: 1rem;
+    color: black;
+    font-weight: bold;
+}
