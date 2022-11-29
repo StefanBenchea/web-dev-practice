@@ -1,60 +1,89 @@
 body {
-    background: linear-gradient(30deg, rgb(77, 77, 77), rgb(58, 58, 58));
-    color: rgb(68, 68, 68);
+  background: linear-gradient(30deg, rgb(77, 77, 77), rgb(58, 58, 58));
+  color: rgb(68, 68, 68);
 }
 
 main {
-    padding-top: 100px;
+  padding: 130px 16px 0;
 }
 
 main ul {
-    width: 1200px;
-    margin: 0 auto 48px auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px 20px;
+  max-width: 1200px;
+  margin: 0 auto 48px auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px 20px;
+  padding: 0;
 }
 
-li:nth-of-type(3) {
+@media (min-width: 48em) {
+  li:nth-of-type(3) {
     grid-column: 1 / span 2;
-}
-    
-main li {
-    display: flex;
-    background-color: white;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-    overflow: hidden;
+  }
+    main ul {
+    grid-template-columns: 1fr 1fr;
 }
 
-main li img {
-    width: 300px;
-    height: 280px;
-    object-fit: cover;
 }
+
+main li {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+}
+main li img {
+    width: 100%;
+  aspect-ratio: 3/2;
+    object-fit: cover;
+  }
+@media (min-width:48em) {
+    main li {
+        flex-direction: row;
+    }
+    main li img {
+        width: 300px;
+    }
+}
+
+
 
 .item-content {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-content p {
+  font-family: var(--font-body);
+  font-size: 1rem;
 }
 
 .item-content h2 {
-    margin: 0;
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
 }
 
 .actions {
-    text-align: right;
+  text-align: right;
 }
 
 .actions a {
-    text-decoration: none;
-    padding: 6px;
-    color: rgb(22, 211, 228);
-    border-radius: 5px;
+    font-family: var(--font-heading);
+  text-decoration: none;
+  padding: 6px;
+  color: white;
+  border-radius: 5px;
+  background-color: #333;
+  font-size: 0.875rem;
+  transition: all 0.3s ease-in;
+  display: inline-block;
 }
 
 .actions a:hover {
-    background-color: rgb(235, 253, 255);
+  transform: scale(1.1);
 }
