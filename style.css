@@ -4,6 +4,7 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     /* background-color:  rgba(255, 255, 255, 0.2); */
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .nav-links {
@@ -75,6 +76,7 @@
     background-color:  rgba(255, 255, 255, 0.2);
     padding: 24px;
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -133,5 +135,79 @@
     }
     .hero__action {
         font-size: 1.2rem;
+    }
+}
+
+.highlights {
+    padding-bottom: 16px;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(88,116,156,1) 100%);
+}
+
+.highlights__header {
+    font-family: var(--font-heading);
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 16px;
+}
+
+.highlights__cards {
+    list-style: none;
+    display: flex;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    width: 75vw;
+    margin: 0;
+    
+}
+
+.card__image {
+    width: 100%;
+    border-radius: 6px;
+    aspect-ratio: 4/3;
+    display: block;
+    object-fit: cover;
+}
+
+.card__content {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding-top: 8px;
+    text-align: center;
+    color: #ffffff;
+}
+
+@media (max-width:48em) {
+    .highlights__cards {
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        padding: 0 16px;
+    }
+
+    .highlights__card-item {
+        scroll-snap-align: center;
+    }
+}
+
+@media (min-width:48em) {
+    .highlights__cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 800px;
+        margin: auto;
+    }
+    .card {
+        width: unset;
+    }
+}
+
+@media (min-width:64em) {
+    .highlights__cards {
+        max-width: 1000px;
+        grid-template-columns: repeat(3,1fr);
     }
 }
