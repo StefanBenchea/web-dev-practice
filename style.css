@@ -139,8 +139,9 @@
 }
 
 .highlights {
-    padding-bottom: 16px;
     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(88,116,156,1) 100%);
+    padding-bottom: 32px;
+
 }
 
 .highlights__header {
